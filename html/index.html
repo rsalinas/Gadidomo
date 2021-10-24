@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Control domótico</title>
+<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+</head>
+<body>
+<script  type="text/javascript">
+
+function relayChange(cmd) {
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "/relays/relays.php", true);
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.send("relayAction="+cmd);
+}
+function updateWidget(xhr, widgetId, relayStatus) {
+	document.getElementById(widgetId).checked = xhr.responseText.indexOf(relayStatus) > -1;
+}
+function updateStatus() {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {	 
+	 updateWidget(xhr, 'luzgeneral', 'a');
+	 updateWidget(xhr, 'luzled', 'b');
+	 updateWidget(xhr, 'pantalla1', 'f');
+	 updateWidget(xhr, 'pantalla2', 'g');
+	 updateWidget(xhr, 'pantalla3', 'h');
+  }
+  xhr.open("GET", "/relays/status.php", true);  
+  xhr.send();
+}
+updateStatus();
+</script>
+
+<h1>CONTROL DOMÓTICO</h1>
+<p>Control de luces, persianas y pantallas de la sala.</p>
+
+
+<!-- LUZ 1-->
+<div style="text-align:left;padding:10px 0">
+	<h1>LUZ GENERAL</h1>
+		<div class="checkbox-switch">
+			<input type="checkbox"  id="luzgeneral" onchange="relayChange((this.checked)?'a':'A');  " value="0" class="input-checkbox" id="toolbar-active">
+		<div class="checkbox-animate">
+			<span class="checkbox-off">OFF</span>
+			<span class="checkbox-on">ON</span>
+		</div>
+	</div>
+</div>
+
+<!-- LUZ LED-->
+<div style="text-align:left;padding:10px 0">
+	<h1>LEDS</h1>
+	<div class="checkbox-switch">
+		<input type="checkbox"  id="luzled" onchange="relayChange(this.checked?'b':'B'); " value="0" class="input-checkbox" id="toolbar-active">
+		<div class="checkbox-animate">
+			<span class="checkbox-off">OFF</span>
+			<span class="checkbox-on">ON</span>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- BOTÓN PERSIANA -->
+<h1>PERSIANA NORD</h1>
+<button class="button1" type="button" onclick="relayChange('c');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('C');">Bajar</button>
+
+<h1>PERSIANA EST</h1>
+<button class="button1" type="button" onclick="relayChange('d');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('D');">Bajar</button>
+
+<h1>PERSIANA OEST</h1>
+<button class="button1" type="button" onclick="relayChange('e');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('E');">Bajar</button>
+
+<!-- BOTÓN PANTALLA 1 -->
+<div style="text-align:left;padding:10px 0">
+	<h1>PANTALLA 1</h1>
+	<div class="checkbox-switch">
+		<input type="checkbox"  id="pantalla1" onchange="relayChange(this.checked?'f':'F'); " value="0" class="input-checkbox" id="toolbar-active">
+		<div class="checkbox-animate">
+			<span class="checkbox-off">Cerrada</span>
+			<span class="checkbox-on">Desplegada</span>
+		</div>
+	</div>
+</div>
+
+
+<!-- BOTÓN PANTALLA 2 -->
+	<h1>PANTALLA 2</h1>
+	<div class="checkbox-switch">
+		<input type="checkbox"  id="pantalla2" onchange="relayChange(this.checked?'g':'G'); " value="0" class="input-checkbox" id="toolbar-active">
+		<div class="checkbox-animate">
+			<span class="checkbox-off">Cerrada</span>
+			<span class="checkbox-on">Desplegada</span>
+		</div>
+	</div>
+
+
+<!-- BOTÓN PANTALLA 3 -->
+	<h1>PANTALLA 3</h1>
+	<div class="checkbox-switch">
+		<input type="checkbox"  id="pantalla3" onchange="relayChange(this.checked?'h':'H'); " value="0" class="input-checkbox" id="toolbar-active">
+		<div class="checkbox-animate">
+			<span class="checkbox-off">Cerrada</span>
+			<span class="checkbox-on">Desplegada</span>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
