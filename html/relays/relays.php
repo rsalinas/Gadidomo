@@ -3,15 +3,15 @@
 /*
 	a: luces generales (GPIO 2)
 	b: tira LED
-	c: persiana norte
-	d: persiana este	 
-	e: persiana oeste
-	f: pantalla 1
-	g: pantalla 2
-	h: pantalla 3
-	i: 
-	j: 
-	k: 
+	c: persiana norte subir
+	d: persiana norte bajar
+	e: persiana este subir
+	f: persiana este bajar
+	g: persiana oeste subir
+	h: persiana oeste bajar
+	i: pantalla 1
+	j: pantalla 2
+	k: pantalla 3
 */
 
 function switchRelays($cmd) {

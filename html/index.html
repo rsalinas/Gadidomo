@@ -64,23 +64,43 @@ updateStatus();
 
 
 <!-- BOTÓN PERSIANA -->
-<h1>PERSIANA NORD</h1>
-<button class="button1" type="button" onclick="relayChange('c');">Subir</button>
-<button class="button2" type="button" onclick="relayChange('C');">Bajar</button>
+<!--
+<button class="button1" type="button" onmousedown="relayChange('c');" onMouseUp="relayChange('C');">Subir</button>
+<button class="button2" type="button" onmousedown="relayChange('d');" onMouseUp="relayChange('D');">Bajar</button>
 
 <h1>PERSIANA EST</h1>
-<button class="button1" type="button" onclick="relayChange('d');">Subir</button>
-<button class="button2" type="button" onclick="relayChange('D');">Bajar</button>
+<button class="button1" type="button" onclick="relayChange('e');" onMouseUp=="relayChange('E');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('f');" onMouseUp=="relayChange('F');">Bajar</button>
 
 <h1>PERSIANA OEST</h1>
+<button class="button1" type="button" onclick="relayChange('g');" onMouseUp="relayChange('G');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('h');" onMouseUp="relayChange('H');">Bajar</button>
+-->
+<h1>PERSIANA NORD</h1>
+<button class="button1" type="button" onclick="relayChange('c');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('CD');">Parar</button>
+<button class="button2" type="button" onclick="relayChange('d');">Bajar</button>
+
+<h1>PERSIANA EST</h1>
 <button class="button1" type="button" onclick="relayChange('e');">Subir</button>
-<button class="button2" type="button" onclick="relayChange('E');">Bajar</button>
+<button class="button2" type="button" onclick="relayChange('EF');">Parar</button>
+<button class="button2" type="button" onclick="relayChange('f');">Bajar</button>
+
+<h1>PERSIANA OEST</h1>
+<button class="button1" type="button" onclick="relayChange('g');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('GH');">Parar</button>
+<button class="button2" type="button" onclick="relayChange('h');">Bajar</button>
+
+<h1>TODAS LAS PERSIANAS</h1>
+<button class="button1" type="button" onclick="relayChange('ceg');">Subir</button>
+<button class="button2" type="button" onclick="relayChange('CDEFGH');">Parar</button>
+<button class="button2" type="button" onclick="relayChange('dfh');">Bajar</button>
 
 <!-- BOTÓN PANTALLA 1 -->
 <div style="text-align:left;padding:10px 0">
 	<h1>PANTALLA 1</h1>
 	<div class="checkbox-switch">
-		<input type="checkbox"  id="pantalla1" onchange="relayChange(this.checked?'f':'F'); " value="0" class="input-checkbox" id="toolbar-active">
+		<input type="checkbox"  id="pantalla1" onchange="relayChange(this.checked?'i':'I'); " value="0" class="input-checkbox" id="toolbar-active">
 		<div class="checkbox-animate">
 			<span class="checkbox-off">Cerrada</span>
 			<span class="checkbox-on">Desplegada</span>
@@ -92,7 +112,7 @@ updateStatus();
 <!-- BOTÓN PANTALLA 2 -->
 	<h1>PANTALLA 2</h1>
 	<div class="checkbox-switch">
-		<input type="checkbox"  id="pantalla2" onchange="relayChange(this.checked?'g':'G'); " value="0" class="input-checkbox" id="toolbar-active">
+		<input type="checkbox"  id="pantalla2" onchange="relayChange(this.checked?'j':'J'); " value="0" class="input-checkbox" id="toolbar-active">
 		<div class="checkbox-animate">
 			<span class="checkbox-off">Cerrada</span>
 			<span class="checkbox-on">Desplegada</span>
@@ -103,7 +123,7 @@ updateStatus();
 <!-- BOTÓN PANTALLA 3 -->
 	<h1>PANTALLA 3</h1>
 	<div class="checkbox-switch">
-		<input type="checkbox"  id="pantalla3" onchange="relayChange(this.checked?'h':'H'); " value="0" class="input-checkbox" id="toolbar-active">
+		<input type="checkbox"  id="pantalla3" onchange="relayChange(this.checked?'k':'K'); " value="0" class="input-checkbox" id="toolbar-active">
 		<div class="checkbox-animate">
 			<span class="checkbox-off">Cerrada</span>
 			<span class="checkbox-on">Desplegada</span>
